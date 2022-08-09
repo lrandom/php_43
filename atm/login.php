@@ -9,7 +9,7 @@ if (!isset($_SESSION['accounts'])) {
     ];
 }
 
-$erros = [];//mảng chứa cảnh báo lỗi
+$err = null;//mảng chứa cảnh báo lỗi
 $existAccount = null;
 if (isset($_POST['pin'])) {
     $accounts = $_SESSION['accounts'];
@@ -30,7 +30,7 @@ if (isset($_POST['pin'])) {
         header("Location:main.php");
     } else {
         //đưa ra cảnh báo là mã pin không chính xác
-        $erros['message'] = 'Mã pin bạn nhập vào không chính xác, vui lòng nhập lại';
+        $err= 'Mã pin bạn nhập vào không chính xác, vui lòng nhập lại';
     }
 }
 
@@ -48,9 +48,9 @@ if (isset($_POST['pin'])) {
 <div class="container">
     <form method="post">
         <?php
-        if (isset($erros['message'])) {
+        if ($err) {
             ?>
-            <div><?php echo $erros['message']; ?></div>
+            <div><?php echo $err; ?></div>
             <?php
         }
         ?>
