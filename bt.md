@@ -14,7 +14,7 @@ Tài khoản người dùng lưu trữ trong mảng accounts = [
 ]
 
 2, Viết chương trình giả lập đăng nhập gồm 3 file, login.php có giao diện nhập mật khẩu và email, so sánh mật khẩu và
-email với mảng cố định profile.php in ra thông tin của người đăng nhập logout.php thực hiện xử lý huỷ session và chuyển
+email với mảng cố định .profile.php in ra thông tin của người đăng nhập logout.php thực hiện xử lý huỷ session và chuyển
 người dùng về trang login.php
 
 accounts = [
