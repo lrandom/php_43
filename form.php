@@ -1,7 +1,22 @@
 <?php
 if (isset($_FILES['img'])) {
     //var_dump($_FILES['img']);
-    move_uploaded_file($_FILES['img']['tmp_name'], 'uploads/' . $_FILES['img']['name']);
+    $month = date('m');//08
+    $year = date('Y');//2022
+    $newDir = $month . '_' . $year;//08_2022
+    $newDir = 'uploads/' . $newDir;//uploads/8_2022
+    if (!file_exists($newDir) || is_file($newDir)) {
+        //tạo mới thư mục
+        mkdir($newDir, 0775);
+        //phần quyền của hệ điều hành linux/unix
+        //3 nhóm người dùng: user, group user, everyone
+        //trên mỗi file/thư mục được áp dụng 3 nhóm người dùng trên
+        //user:sở hưũ thư mục /file
+        //group user: nhóm người sở hữu thư mục/file
+        //everyone: tất cả những người khác (những người ko sở hữu thư mục/file)
+        //read->đọc(4), ex -> thực thi(2), ghi -> write (1)
+    }
+    move_uploaded_file($_FILES['img']['tmp_name'], $newDir . '/' . $_FILES['img']['name']);
 }
 ?>
 <!doctype html>
