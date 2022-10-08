@@ -1,11 +1,16 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+function loadView($viewPath)
+{
+    include_once('src/views/' . $viewPath);
+}
 
-$userController = new \Lrandom\Php43\controllers\UserController();
-$userController->index();
-
-$userModel = new \Lrandom\Php43\models\UserModel();
-$userModel->index();
-
-$postModel = new \Lrandom\Php43\models\PostModel();
-$postModel->index();
+if (isset($_GET['ct'])) {
+    $ct = $_GET['ct'];//User/edit
+    $ctArr = explode("/", $ct); //["User","edit"]
+    $className = "Lrandom\\Php43\\controllers\\" . strtolower($ctArr[0]) . 'Controller'; //userController
+    $objOfController = new $className;
+    $action = $ctArr[1];
+    $params = $ctArr[2];
+    $objOfController->{$action}($params);
+}
