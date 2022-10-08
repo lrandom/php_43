@@ -1,6 +1,6 @@
 <?php
 
-namespace php43\controllers;
+namespace Lrandom\Php43\controllers;
 
 class UserController
 {

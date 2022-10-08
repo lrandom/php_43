@@ -1,5 +1,5 @@
 <?php
-namespace php43\models;
+namespace Lrandom\Php43\models;
 class PostModel{
     function index()
     {

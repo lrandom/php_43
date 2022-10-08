@@ -1,0 +1,19 @@
+{
+  "name": "lrandom/php_43",
+  "description": "Demo",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Lrandom\\Php43\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Nguyen Thanh Luan",
+      "email": "luann4099@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
