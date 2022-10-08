@@ -9,7 +9,7 @@ class postController
     function add()
     {
         $postModel = new PostModel();
-        $postModel->add();
+        $list = $postModel->list();
         echo "add post";
         loadView('post/add.php');
     }
